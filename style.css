@@ -1,0 +1,161 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgb(24, 50, 91), rgb(27, 70, 111));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #E5E5E5;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Heading */
+.hero h1 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.hero h1 span {
+    color: #FCA311;
+}
+
+/* Textarea */
+textarea {
+    width: 600px;
+    height: 250px;
+    background: rgb(52, 90, 156);
+    color: #E5E5E5;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+textarea::placeholder {
+    font-size: 16px;
+    color: #A8B2D1;
+}
+
+/* Row */
+.row {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Button */
+button {
+    background: #FCA311;
+    color: rgb(28, 69, 130);
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #FFB74D;
+}
+
+/* Button Icon */
+button img {
+    width: 16px;
+    margin-right: 10px;
+}
+
+/* 🔥 FIXED: Dropdown Text & Symbol Alignment */
+select {
+    flex: 1;
+    color: #E5E5E5;
+    background: rgb(46, 90, 166);
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 35px;
+    appearance: none; /* Hides default system dropdown */
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    
+    /* ✅ Fix text & dropdown overlap */
+    padding: 0 50px 0 20px; /* Extra right padding for dropdown icon */
+
+    /* ✅ Forces Dropdown Arrow to Show Properly */
+    background-image: url("images/dropdown.png");
+    background-repeat: no-repeat;
+    background-size: 20px; /* Adjust size for visibility */
+    background-position: right 20px center;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) { /* Tablets & Small Screens */
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 90%;
+        gap: 15px;
+    }
+
+    textarea {
+        width: 90%;
+    }
+
+    select, button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile Screens */
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    select {
+        font-size: 16px;
+        display: block;
+        appearance: none;
+        
+        /* ✅ Fix text & dropdown overlap on mobile */
+        padding: 0 50px 0 20px; /* Extra right padding for dropdown icon */
+
+        /* ✅ Forces Dropdown Arrow to be Visible on Mobile */
+        background-image: url("images/dropdown.png");
+        background-size: 18px;
+        background-position: right 15px center;
+    }
+}
