@@ -1,24 +1,33 @@
-let speech= new SpeechSynthesisUtterance();
+// Initialize speech synthesis
+let speech = new SpeechSynthesisUtterance();
+let voices = [];
+let voiceSelect = document.querySelector("select");
 
-let voices=[
+// Initialize voices when they are available
+window.speechSynthesis.onvoiceschanged = () => {
+    voices = window.speechSynthesis.getVoices();
+    speech.voice = voices[0];
 
-];
+    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+};
 
-let voiceselect=document.querySelector("select");
-window.speechSynthesis.onvoiceschanged=()=>{
-    voices=window.speechSynthesis.getVoices();
-    speech.voice=voices[0];
+// Update selected voice
+voiceSelect.addEventListener("change", () => {
+    speech.voice = voices[voiceSelect.value];
+});
 
-
-    voices.forEach((voice,i)=>(voiceselect.options[i]=new Option(voice.name,i)));
-}
-
-voiceselect.addEventListener("change" , ()=>{
-    speech.voice=voices[voiceselect.value]
-})
-
-document.querySelector("button").addEventListener("click" , ()=>{
-    speech.text=document.querySelector("textarea").value;
+// Handle listen button click
+document.querySelector("button").addEventListener("click", () => {
+    speech.text = document.querySelector("textarea").value;
     window.speechSynthesis.speak(speech);
-})
+});
 
+// Mobile menu toggle
+const menuIcon = document.querySelector('.menu-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+menuIcon.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    const icon = menuIcon.querySelector('ion-icon');
+    icon.name = icon.name === 'menu-outline' ? 'close-outline' : 'menu-outline';
+});

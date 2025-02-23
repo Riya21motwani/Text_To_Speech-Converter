@@ -5,14 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Speech Converter</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <div class="hero">
-        <h1>Text To Speech <span>Converter</span></h1>
-        <textarea placeholder="Write anything here ..."></textarea>
-        <div class="row">
-            <select ></select>
-            <button><img src="images/play.png">Listen</button>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <ion-icon name="volume-high"></ion-icon>
+            <span>Speakify</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="menu-icon">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="mobile-menu">
+            <a href="#">About</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Header -->
+            <h1>Text To <span>Speech</span> Converter</h1>
+
+            <!-- Converter Section -->
+            <div class="converter">
+                <textarea placeholder="Write anything here ..."></textarea>
+                
+                <div class="row">
+                    <select></select>
+                    <button>
+                        <ion-icon name="mic"></ion-icon>
+                        Listen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <ion-icon name="chatbubbles"></ion-icon>
+                    <h3>Multiple Languages</h3>
+                    <p>Support for various languages and accents</p>
+                </div>
+                <div class="feature-card">
+                    <ion-icon name="volume-high"></ion-icon>
+                    <h3>Natural Voices</h3>
+                    <p>High-quality speech synthesis</p>
+                </div>
+                <div class="feature-card">
+                    <ion-icon name="help-circle"></ion-icon>
+                    <h3>Easy to Use</h3>
+                    <p>Simple and intuitive interface</p>
+                </div>
+            </div>
         </div>
     </div>
 
