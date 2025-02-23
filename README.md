@@ -12,7 +12,6 @@ Speakify is a simple and intuitive web application that converts text into speec
 ## Technologies Used
 - **HTML, CSS**: For structuring and styling the UI.
 - **JavaScript**: For functionality and handling speech synthesis.
-- **Ionicons**: For icons and UI elements.
 - **Web Speech API**: For text-to-speech conversion.
 
 ## Installation
